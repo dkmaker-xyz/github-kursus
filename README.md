@@ -15,6 +15,7 @@
   - Pull / Push
   - Pull Request
   - Master / Main
+  - Tags / Releases
 - Hvordan kan man bruge Git?
   - [cli](#cli)
   - Sæt Username / Email
@@ -115,6 +116,12 @@ Et pull request er at trækker de ændring du har lavet i en Brach ind i en ande
 - Delete udvikling
 
 Et pull request bruges typisk hvis man har flere branches og man gerne vil have noget kode fra en "udviklings branch" ind i master/main branch - eller hvis man er et team og en "Voksen" skal godkende den rettelse man har lavet.
+
+## Tags / Releases
+
+Et Tag/Release er blot en tekst der bliver tilføjet et Commit ID - dvs. man arbejder på version 1.0 af sin software og man har måske 50 commits - men nu vil man gerne sige man har en "færdig" version as is - så sætter man et tag på det pågældende commit.
+
+Dette tag kan man så liste dvs. man får ikke en liste med 3000 commits men alene en liste med "Tags" som man selv har udvalgt som værende f.eks. versioner eller features eller projekt navne.
 
 # Source Control kort fortalt
 
@@ -239,13 +246,25 @@ Bede server / service om at bruge kode (Lægge i drift)
 
 # Branching Strategier
 
-### Trunk Based
+Det der virker for dig er bedst - der er et hav af strategier man kan benytte
 
-Det kan også være rigtig enkelt med Trunk Based
+## Trunk Based
+
+Den simpleste form - du har 1 spor som hedder Main eller Master
 
 ![TrunkBased](img/trunk-based-development-branching-strategy.png)
 
-### Git Flow
+## Release Based
+
+Du har en Branch for hver release, det har den fordel at du kan lave Hotfixes pr. release - men har også den ulempe at det kan blive en meget stor kode base at holde styr på hvis man har alle major / minor versioner.
+
+Bruges typisk hvis man skal vedligeholde mange versioner inklusiv de ældre versioner hvor man har brug for at komme tilbage til version 1.2 og lave en hotfix - selvom man arbejder på version 2.5.
+
+## Feature Based
+
+Du har f.eks. et website eller noget Arduino kode, der har man ikke flere versioner men man udvikler features dvs. man har sin "hoved kode" og derfra udvikler man flere og flere features man trækker ind i main / master - men man har reelt kun 1 version der er den "gældende"
+
+## Git Flow
 
 Det kan være meget kompliceret med GitFlow strategien
 
