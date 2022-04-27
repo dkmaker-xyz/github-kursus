@@ -6,56 +6,92 @@
 - Git begreber
   - Repository
   - Branch
-  - Pull / Push
+  - Add
   - Commit
+  - Pull / Push
   - Pull Request
   - Master / Main
 - Hvordan kan man bruge Git?
-  - cli
-  - Visual Studio Code (VSCode)
-  - Visual Studio
-  - GitHub Desktop
-  - Atom Editor
+  - [cli](#cli)
+  - Sæt Username / Email
+  - Visual Studio Code (VSCode) X
+  - GitHub Desktop X
   - Og mange mange flere...
 - Anvendelsesområder
   - Source control
-    - Både alene
-    - Og i Teams
+    - Både alene X
+    - Og i Teams X
 - Praktiske eksempler
   - Oprette et Git Repository
     - Nyt Repository
     - Allerede eksisterende kode
   - VSCode Integration
-    - 
+    - Hvorfor elsker jeg dette?
   - GitHub Pages
     - HTML/Markdown uden en server via *.github.io eller eget domain!
+  - Nyttige kommandoer
+    - git status
 - Branching Strategier
   - [Trunk Based](#trunk-based)
 
-## Hvad er Git?
+# Hvad er Git?
 
 Git bliver brugt mellem flere medlemmer af et team - eller kan bruges alene bare for at holde styr på sin kode.
 
 ![Git Eksempel](img/distributed-vcs.png)
 
-### Git eller Github?
+## Git eller Github?
 
 Github er ikke Git, GitHub er en service til at lægge din kode op i Git formatet, GitHub facilitere blot sikkerhed, dokumentation, projektstyring etc. rundt om Git formatet. Der findes mange alternativer til GitHub - men Github er den mest brugte.
 
 Af alternativer kan nævnes GitLab, Azure DevOps, Bitbucket, GitBucket etc.
 
-### Git begreber
+# Git begreber
 
 Der er mange ord / ting i Git som godt kan give en ret stejl indlæringskurve herunder render vi kort indt i dem
 
-# Repository
-# Branch
-# Pull/Push
-# Commit
-# Pull Request
-# Master / Main
+## Repository
 
-### Source Control kort fortalt
+En mappe der er "tracked" med Git, dvs. der er formentlig en .git mappe i roden af denne mappe.
+
+.git mappen indeholder alle versioner etc. af filer i repository dvs. ud fra den database der ligger i .git mappen kan man gå point in time tilbage til alle ændringer samt se sin log via git.exe eller f.eks. VSCode
+
+## Branch
+
+En gren af koden - standard branch hedder enten master eller main - [anekdote tid](https://faktalink.dk/titelliste/slaveriet-i-usa/slaveriets-efterspil)
+
+Opret ny fra aktuel
+```
+git.exe branch test-branch
+```
+
+## Add
+
+Før en fil kan committes skal man vælge at tilføje den til sin Stage area (Filer der er ændret som skal med i commit)
+
+Opret ny fra aktuel
+```
+git.exe add main.cpp
+git add .
+```
+
+## Commit
+
+Du gemmer et "snapshot" af din kode med en besked i den pågældende branch du er i - en commit er en lokal ting - denne er først gemt online når den er "Pushed" online
+
+Commit aktuel kode
+```
+git.exe branch test-branch
+```
+
+## Pull/Push
+
+Pull / Push gør det det siger - man henter eller sender rettelser til det kode man har
+
+## Pull Request
+## Master / Main
+
+# Source Control kort fortalt
 
 Source Control bruges til at organisere tekstfiler og tekst indhold på en måde hvor du kan spore ændringer, merge / diff filer for at se hvad er ændret.
 
@@ -120,14 +156,25 @@ to read about a specific subcommand or concept.
 See 'git help git' for an overview of the system.
 ```
 
+### Sæt Username / Email
+
+Alle commits etc. bliver påført hvem der har lavet det så før man kan committe / bruge git skal git vide hvem man er og det kan sættes via nedenstående kommando.
+
+```
+git config --global user.name "Dit fulde navn"
+git config --global user.email "Den email adresse du logger på GitHub med"
+```
+
 ## Branching Strategier
 
-Det kan være meget kompliceret med GitFlow strategien
-
-![Kompliceret](img/gitflow-branching-strategy.png)
+### Trunk Based
 
 Det kan også være rigtig enkelt med Trunk Based
 
 ![TrunkBased](img/trunk-based-development-branching-strategy.png)
 
-### Trunk Based
+### Git Flow
+
+Det kan være meget kompliceret med GitFlow strategien
+
+![Kompliceret](img/gitflow-branching-strategy.png)
