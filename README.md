@@ -3,6 +3,10 @@
 - Hvad er Git?
   - Eller Github?
   - Source Control kort fortalt
+- Anvendelsesområder
+  - Source control
+    - Både alene
+    - Og i Teams
 - Git begreber
   - Repository
   - Branch
@@ -14,13 +18,9 @@
 - Hvordan kan man bruge Git?
   - [cli](#cli)
   - Sæt Username / Email
-  - Visual Studio Code (VSCode) X
-  - GitHub Desktop X
+  - Visual Studio Code (VSCode)
+  - GitHub Desktop
   - Og mange mange flere...
-- Anvendelsesområder
-  - Source control
-    - Både alene X
-    - Og i Teams X
 - Praktiske eksempler
   - Oprette et Git Repository
     - Nyt Repository
@@ -31,6 +31,9 @@
     - HTML/Markdown uden en server via *.github.io eller eget domain!
   - Nyttige kommandoer
     - git status
+- CI / CD - GitHub Actions
+  - Continuous Integration
+  - Continuous Deployment
 - Branching Strategier
   - [Trunk Based](#trunk-based)
 
@@ -45,6 +48,16 @@ Git bliver brugt mellem flere medlemmer af et team - eller kan bruges alene bare
 Github er ikke Git, GitHub er en service til at lægge din kode op i Git formatet, GitHub facilitere blot sikkerhed, dokumentation, projektstyring etc. rundt om Git formatet. Der findes mange alternativer til GitHub - men Github er den mest brugte.
 
 Af alternativer kan nævnes GitLab, Azure DevOps, Bitbucket, GitBucket etc.
+
+# Anvendelsesområder
+
+Jeg lægger stort set alt hvad jeg laver personligt i Git af flere grunde
+
+1. Jeg kan se hvad jeg har rettet siden sidst
+2. Jeg kan gemme løbende og sige "nu er det her færdig"
+3. Jeg kan branche ud (Lave en gren) og arbejde med noget jeg vil teste og så hoppe tilbage til det jeg ved der virker
+4. Jeg kan gemme min kode Online så jeg altid kan komme til den
+5. Jeg kan bede andre rette i min kode men jeg kan stadigvæk godkende det!
 
 # Git begreber
 
@@ -87,9 +100,21 @@ git.exe branch test-branch
 ## Pull/Push
 
 Pull / Push gør det det siger - man henter eller sender rettelser til det kode man har
+```
+git.exe push
+git.exe pull
+```
 
 ## Pull Request
-## Master / Main
+
+Et pull request er at trækker de ændring du har lavet i en Brach ind i en anden branch. Grunden til det hedder et request er fordi der er flere step
+
+- Pull Request master <- undvkling
+- Review / Approve
+- Merge
+- Delete udvikling
+
+Et pull request bruges typisk hvis man har flere branches og man gerne vil have noget kode fra en "udviklings branch" ind i master/main branch - eller hvis man er et team og en "Voksen" skal godkende den rettelse man har lavet.
 
 # Source Control kort fortalt
 
@@ -156,6 +181,22 @@ to read about a specific subcommand or concept.
 See 'git help git' for an overview of the system.
 ```
 
+## Visual Studio Code (VSCode)
+
+I min optik har VSCode den bedste integration, da VSCode er mere end bare en editor, næsten alle de ting jeg arbejder med køre via VSCode.
+
+VSCode har en meget effektiv integration til Git hvor man nemt kan se hvor filer er ændret, samt man har mulighed for på en nem måde at vedligeholde Git filer.
+
+Demotid!
+
+## GitHub Desktop
+
+Der findes også en GUI til GitHub som hedder [GitHub Desktop](https://desktop.github.com/) - jeg har aldrig rigtig brugt den, da det bare vil være 2 værktøjer til det samme, men den kan være aktuel hvis man f.eks. udvikler til Arduino IDE hvor Git ikke er en integreret del.
+
+## Alle de andre..
+
+Ja der er også Visual Studio, Atom editor osv osv.. 
+
 ### Sæt Username / Email
 
 Alle commits etc. bliver påført hvem der har lavet det så før man kan committe / bruge git skal git vide hvem man er og det kan sættes via nedenstående kommando.
@@ -165,7 +206,38 @@ git config --global user.name "Dit fulde navn"
 git config --global user.email "Den email adresse du logger på GitHub med"
 ```
 
-## Branching Strategier
+# Praktiske eksempler - Demo tid!
+
+Nu skal vi se lidt demoer
+
+- Oprette et Git Repository
+  - Nyt Repository
+  - Allerede eksisterende kode
+- VSCode Integration
+  - Hvorfor elsker jeg dette?
+- GitHub Pages
+  - HTML/Markdown uden en server via *.github.io eller eget domain!
+- Nyttige kommandoer
+  - git status
+
+# CI / CD - GitHub Actions
+
+Infrastruktur as Code - eller Test som kode / tekst, med CI / CD sker der automatisk noget med dit program når du uploader / ændre en fil - det kan f.eks. være
+
+Du retter i din Source Code og comitter til en Test branch
+Systemet compiler / eller laver en Docker fil for dig og laver en docker Container
+Docker container uploades til Docker Hub
+Din test WebServer får besked på at hente nyeste site
+
+På denne måde automatisere man udviklingen og bygger nogle avanceret flows der gør mere end bare gemme indholde, dette har en masse foredele blandt andet du kan release hver gang du laver en test.
+
+## Continuous Integration
+Køre / Bygge / teste kode
+
+## Continuous Deployment
+Bede server / service om at bruge kode (Lægge i drift)
+
+# Branching Strategier
 
 ### Trunk Based
 
