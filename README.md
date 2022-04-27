@@ -82,19 +82,6 @@ Opret ny fra aktuel
 git.exe branch test-branch
 ```
 
-HTML Eksempel
-
-```html
-<html>
-  <head>
-    <title>Test</title>
-  </head>
-<body>
-  <h1>Test</h1>
-</body>
-</html>
-```
-
 ## Add
 
 Før en fil kan committes skal man vælge at tilføje den til sin Stage area (Filer der er ændret som skal med i commit)
