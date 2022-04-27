@@ -36,7 +36,10 @@
   - Continuous Integration
   - Continuous Deployment
 - Branching Strategier
-  - [Trunk Based](#trunk-based)
+  - Trunk
+  - Release
+  - Feature
+  - GitFlow
 
 # Hvad er Git?
 
