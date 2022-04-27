@@ -28,10 +28,10 @@
     - Allerede eksisterende kode
   - VSCode Integration
     - Hvorfor elsker jeg dette?
+  - VSCode / Platform IO
+    - Eksempler på hvordan man direkte i VSCode kan lave Arduino på den fede måde!
   - GitHub Pages
     - HTML/Markdown uden en server via *.github.io eller eget domain!
-  - Nyttige kommandoer
-    - git status
 - CI / CD - GitHub Actions
   - Continuous Integration
   - Continuous Deployment
